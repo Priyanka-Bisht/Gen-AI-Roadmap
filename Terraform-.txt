@@ -1,0 +1,36 @@
+When we run terraform init, plugins required for the provider are automatically downloaded and saved locally to a .terraform directory.
+
+	[ResourceType]  [LocalName]
+resource "aws_instance" "first_ec2"{
+	ami = "..."
+	instance_type = "..."
+}
+
+To destroy a specific resource:
+terraform destroy -target aws_instance.myec2
+
+For referencing attributes:
+Let's assume Public_ip with cidr block - ${aws_eip.publicip.public_ip}/32
+
+
+Change in terraform taint command after v0.15.2 version
+Terraform Taint - terraform apply -replace="aws_instance.myec2"
+
+spalt expression -
+[*] - Gives list of resources.
+
+Zipmap = maps keys and values from list.
+
+Provisioners - used to execute scripts on local or remote machine as part of resource creation or destruction.
+
+terraform import new functionality available from version 1.5 onwards.
+
+Sentinal - Policy-as-code framework integrated with the hashicorp enterprise products.
+
+Note: if you are getting an error even your code is correct check that which provider version and terraform version you are using.
+	terraform init -upgrate
+
+
+
+
+
